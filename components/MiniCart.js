@@ -1,11 +1,13 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
 import Image from "next/image";
-import { Fragment, useContext } from "react";
+import { Fragment, useContext, useRef } from "react";
 import { CartContext } from "../context/shopContext";
 import { formatter } from "../utils/helpers";
 
 export default function MiniCart({ cart }) {
+  const cancelButtonRef = useRef();
+
   const { cartOpen, setCartOpen, checkoutUrl } = useContext(CartContext);
 
   let cartTotal = 0;
@@ -16,6 +18,7 @@ export default function MiniCart({ cart }) {
   return (
     <Transition.Root show={cartOpen} as={Fragment}>
       <Dialog
+        initialFocus={cancelButtonRef}
         as="div"
         className="z-50 fixed inset-0 overflow-hidden"
         onClose={() => {
@@ -54,6 +57,7 @@ export default function MiniCart({ cart }) {
                       </Dialog.Title>
                       <div className="ml-3 h-7 flex items-center">
                         <button
+                          ref={cancelButtonRef}
                           type="button"
                           className="-m-2 p-2 text-gray-400 hover:text-gray-500"
                           onClick={() => setCartOpen(false)}
