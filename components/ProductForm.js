@@ -51,9 +51,9 @@ export default function ProductForm({ product }) {
   }
 
   return (
-    <div className="rounded-2xl p-4 shadow-lg flex flex-col w-full md:w-1/3">
+    <div className="flex flex-col w-full p-4 shadow-lg rounded-2xl md:w-1/3">
       <h2 className="text-2xl font-bold">{product.title}</h2>
-      <span className="pb-6">
+      <span className="pb-3">
         {formatter.format(product.variants.edges[0].node.priceV2.amount)}
       </span>
       {product.options.map(({ name, values }) => (
@@ -69,7 +69,7 @@ export default function ProductForm({ product }) {
         onClick={() => {
           addToCart(selectedVariant);
         }}
-        className="bg-black rounded-lg text-white px-2 py-3 hover:bg-gray-800"
+        className="px-2 py-3 mt-3 text-white bg-black rounded-lg hover:bg-gray-800"
       >
         Add To Card
       </button>
