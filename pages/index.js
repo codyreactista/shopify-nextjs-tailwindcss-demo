@@ -1,9 +1,11 @@
+import Hero from "../components/Hero";
 import ProductList from "../components/ProductList";
 import { getProductsInCollection } from "../lib/shopify";
 
 export default function Home({ products }) {
   return (
-    <div className="text-3xl">
+    <div>
+      <Hero />
       <ProductList products={products} />
     </div>
   );
