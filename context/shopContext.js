@@ -40,16 +40,20 @@ export default function ShopProvider({ children }) {
 
       localStorage.setItem("checkout_id", JSON.stringify([newItem, checkout]));
     } else {
-      let newCart = [...cart];
+      let newCart = [];
+      let added = false;
 
       cart.map((item) => {
         if (item.id === newItem.id) {
           item.variantQuantity++;
           newCart = [...cart];
-        } else {
-          newCart = [...cart, newItem];
+          added = true;
         }
       });
+
+      if (!added) {
+        newCart = [...cart, newItem];
+      }
 
       setCart(newCart);
       const newCheckout = await updateCheckout(checkoutId, newCart);
