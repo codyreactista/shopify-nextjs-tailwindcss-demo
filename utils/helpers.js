@@ -1,5 +1,4 @@
-export const formatter = new Intl.NumberFormat("en-US", {
+export const formatter = new Intl.NumberFormat("vi-VN", {
   style: "currency",
-  currency: "USD",
-  minimumFractionDigits: 2,
+  currency: "VND",
 });
