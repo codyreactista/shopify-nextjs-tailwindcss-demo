@@ -1,10 +1,10 @@
+import { CartContext } from "@context/shopContext";
 import { Dialog, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
+import { formatter } from "@utils/helpers";
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment, useContext, useRef } from "react";
-import { CartContext } from "../context/shopContext";
-import { formatter } from "../utils/helpers";
 
 export default function MiniCart({ cart }) {
   const cancelButtonRef = useRef();

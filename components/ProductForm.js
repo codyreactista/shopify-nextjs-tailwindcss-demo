@@ -1,6 +1,6 @@
+import { CartContext } from "@context/shopContext";
+import { formatter } from "@utils/helpers";
 import { useContext, useState } from "react";
-import { CartContext } from "../context/shopContext";
-import { formatter } from "../utils/helpers";
 import ProductOptions from "./ProductOptions";
 
 export default function ProductForm({ product }) {

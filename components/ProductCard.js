@@ -1,6 +1,6 @@
+import { formatter } from "@utils/helpers";
 import Image from "next/image";
 import Link from "next/link";
-import { formatter } from "../utils/helpers";
 
 export default function ProductCard({ product }) {
   const { handle, title } = product.node;
